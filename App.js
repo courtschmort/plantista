@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, Button, Image, View, Alert } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View, Alert } from 'react-native';
 
 import * as Font from 'expo-font';
 
@@ -34,14 +34,9 @@ export default class App extends React.Component {
             Your plants are waiting for you!
           </Text>
         </View>
-        <View style={styles.button}>
-          <Button
-            onPress={() => Alert.alert('You pressed the button!')}
-            title='Get started'
-            color='white'
-            accessibilityLabel='Get started large button'
-            />
-        </View>
+        <TouchableOpacity onPress={() => Alert.alert('You pressed the button!')}>
+          <Text style={styles.button}>Get started</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -81,10 +76,12 @@ const styles = StyleSheet.create({
     marginTop: 32,
     marginBottom: 32,
     width: 350,
-    padding: 9,
+    padding: 14,
     backgroundColor: 'black',
-    // fontFamily: 'poppins-medium',
+    fontFamily: 'poppins-medium',
+    fontSize: 16,
     textAlign: 'center',
+    color: 'white',
   },
   image: {
     flex: 0,

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, Button, View, Alert } from 'react-native';
 
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
@@ -27,15 +27,23 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-        <Text style={styles.subHeader}>
-          Welcome home,
-        </Text>
-        <Text style={styles.header}>
-          Plantista
-        </Text>
-        <Text style={styles.body}>
-          Your plants are waiting for you!
-        </Text>
+      <Text style={styles.subHeader}>
+        Welcome home,
+      </Text>
+      <Text style={styles.header}>
+        Plantista
+      </Text>
+      <Text style={styles.body}>
+        Your plants are waiting for you!
+      </Text>
+      <View style={styles.button}>
+        <Button
+          onPress={() => Alert.alert('You pressed the button!')}
+          title='Get started'
+          color='white'
+          accessibilityLabel='Get started large button'
+          />
+      </View>
     </View>
   );
 }
@@ -66,9 +74,10 @@ const styles = StyleSheet.create({
   button: {
     flex: 0,
     justifyContent: 'flex-end',
-    marginBottom: 36,
+    marginTop: 32,
+    marginBottom: 32,
     width: 350,
-    padding: 14,
+    padding: 9,
     backgroundColor: 'black',
     textAlign: 'center',
   }

@@ -30,10 +30,10 @@ export default class App extends React.Component {
           <Text style={styles.header}>
             Plantista
           </Text>
-          <Text style={styles.body}>
-            Your plants are waiting for you!
-          </Text>
         </View>
+        <Text style={styles.body}>
+          Your plants are waiting for you!
+        </Text>
         <TouchableOpacity onPress={() => Alert.alert('You pressed the button!')} style={styles.button}>
           <Text style={styles.buttonText}>Get started</Text>
         </TouchableOpacity>

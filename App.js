@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     width: 350,
   },
   buttonText: {
-    padding: 14,
+    padding: 20,
     fontFamily: 'poppins-medium',
     fontSize: 16,
     textAlign: 'center',

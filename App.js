@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, Button, View, Alert } from 'react-native';
+import { StyleSheet, Text, Button, Image, View, Alert } from 'react-native';
 
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
@@ -27,6 +27,10 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <Image
+        style={styles.image}
+        source={require('./assets/icons/seedling-solid.png')}
+        />
       <View style={styles.content}>
         <Text style={styles.subHeader}>
           Welcome home,
@@ -87,5 +91,13 @@ const styles = StyleSheet.create({
     padding: 9,
     backgroundColor: 'black',
     textAlign: 'center',
+  },
+  image: {
+    flex: 0,
+    justifyContent: 'flex-end',
+    marginTop: 64,
+    width: 44,
+    height: 44,
+    resizeMode: 'contain',
   }
 });

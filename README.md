@@ -28,6 +28,34 @@ Plantista is a React Native mobile application.
 
 * As a type of user, I want to achieve goal so that reason.
 
+## Documentation
+
+#### Planning
+
+###### Friday, February 28, 2020
+* Research:
+  * Find tutorials on YouTube
+  * Read [Getting Started](https://reactnative.dev/docs/getting-started)
+  * Read [Get Started With Expo](https://expo.io/learn)
+
+###### Wednesday, March 4, 2020
+* Wireframe in Figma: Click [here](https://www.figma.com/file/ktaaceiuk4vHrpNCajVQPC/Plantista?node-id=0%3A1) to view
+
+###### Thursday, March 5, 2020
+* Wireframe in Figma cont.
+
+###### Friday, March 6, 2020
+* Wireframe in Figma cont.
+* Research:
+  * [Complete React Tutorial (with Redux)](https://www.youtube.com/playlist?list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG)
+
+###### Saturday, March 7, 2020
+* Research:
+  * [React Native Tutorial for Beginners](https://www.youtube.com/playlist?list=PL4cUxeGkcC9ixPU-QkScoRBVxtPPzVjrQ)
+  * [React Context & Hooks Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9hNokByJilPg5g9m2APUePI)
+* In progress:
+  * Landing Page
+
 ## Setup/Installation Requirements
 
 #### Cloning

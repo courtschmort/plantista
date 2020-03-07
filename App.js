@@ -27,15 +27,17 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.subHeader}>
-        Welcome home,
-      </Text>
-      <Text style={styles.header}>
-        Plantista
-      </Text>
-      <Text style={styles.body}>
-        Your plants are waiting for you!
-      </Text>
+      <View style={styles.content}>
+        <Text style={styles.subHeader}>
+          Welcome home,
+        </Text>
+        <Text style={styles.header}>
+          Plantista
+        </Text>
+        <Text style={styles.body}>
+          Your plants are waiting for you!
+        </Text>
+      </View>
       <View style={styles.button}>
         <Button
           onPress={() => Alert.alert('You pressed the button!')}
@@ -50,6 +52,11 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+  },
+  content: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',

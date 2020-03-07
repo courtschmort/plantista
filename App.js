@@ -34,8 +34,8 @@ export default class App extends React.Component {
             Your plants are waiting for you!
           </Text>
         </View>
-        <TouchableOpacity onPress={() => Alert.alert('You pressed the button!')}>
-          <Text style={styles.button}>Get started</Text>
+        <TouchableOpacity onPress={() => Alert.alert('You pressed the button!')} style={styles.button}>
+          <Text style={styles.buttonText}>Get started</Text>
         </TouchableOpacity>
       </View>
     );
@@ -75,9 +75,11 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     marginTop: 32,
     marginBottom: 32,
-    width: 350,
-    padding: 14,
     backgroundColor: 'black',
+    width: 350,
+  },
+  buttonText: {
+    padding: 14,
     fontFamily: 'poppins-medium',
     fontSize: 16,
     textAlign: 'center',

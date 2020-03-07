@@ -1,57 +1,50 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, Text, Button, Image, View, Alert } from 'react-native';
 
 import * as Font from 'expo-font';
-import { AppLoading } from 'expo';
 
-const fetchFonts = () => {
-  return Font.loadAsync({
-    'poppins-medium': require('./assets/fonts/Poppins-Medium.ttf'),
-    'poppins-regular': require('./assets/fonts/Poppins-Regular.ttf'),
-    'poppins-semibold': require('./assets/fonts/Poppins-SemiBold.ttf'),
-    'playfairdisplay-regular': require('./assets/fonts/PlayfairDisplay-Regular.ttf')
-  });
-};
-
-export default function App() {
-  const [dataLoaded, setDataLoaded] = useState(false);
-
-  if (!dataLoaded) {
+export default class App extends React.Component {
+  state = {
+    fontLoaded: false,
+  };
+  async componentDidMount() {
+    await Font.loadAsync({
+      'poppins-medium': require('./assets/fonts/Poppins-Medium.ttf'),
+      'poppins-regular': require('./assets/fonts/Poppins-Regular.ttf'),
+      'poppins-semibold': require('./assets/fonts/Poppins-SemiBold.ttf'),
+      'playfair-display-regular': require('./assets/fonts/PlayfairDisplay-Regular.ttf')
+    });
+    this.setState({ fontLoaded: true });
+  }
+  render() {
     return (
-      <AppLoading
-        startAsync={fetchFonts}
-        onFinish={() => setDataLoaded(true)}
-        />
+      <View style={styles.container}>
+        <Image
+          style={styles.image}
+          source={require('./assets/icons/seedling-solid.png')}
+          />
+        <View style={styles.content}>
+          <Text style={styles.subHeader}>
+            Welcome home,
+          </Text>
+          <Text style={styles.header}>
+            Plantista
+          </Text>
+          <Text style={styles.body}>
+            Your plants are waiting for you!
+          </Text>
+        </View>
+        <View style={styles.button}>
+          <Button
+            onPress={() => Alert.alert('You pressed the button!')}
+            title='Get started'
+            color='white'
+            accessibilityLabel='Get started large button'
+            />
+        </View>
+      </View>
     );
   }
-
-  return (
-    <View style={styles.container}>
-      <Image
-        style={styles.image}
-        source={require('./assets/icons/seedling-solid.png')}
-        />
-      <View style={styles.content}>
-        <Text style={styles.subHeader}>
-          Welcome home,
-        </Text>
-        <Text style={styles.header}>
-          Plantista
-        </Text>
-        <Text style={styles.body}>
-          Your plants are waiting for you!
-        </Text>
-      </View>
-      <View style={styles.button}>
-        <Button
-          onPress={() => Alert.alert('You pressed the button!')}
-          title='Get started'
-          color='white'
-          accessibilityLabel='Get started large button'
-          />
-      </View>
-    </View>
-  );
 }
 
 const styles = StyleSheet.create({
@@ -67,7 +60,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   header: {
-    fontFamily: 'playfairdisplay-regular',
+    fontFamily: 'playfair-display-regular',
     fontSize: 64,
   },
   subHeader: {
@@ -90,6 +83,7 @@ const styles = StyleSheet.create({
     width: 350,
     padding: 9,
     backgroundColor: 'black',
+    // fontFamily: 'poppins-medium',
     textAlign: 'center',
   },
   image: {
@@ -101,3 +95,5 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   }
 });
+
+// { this.state.fontLoaded ? () : null }

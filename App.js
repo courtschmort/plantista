@@ -24,18 +24,34 @@ export default class App extends React.Component {
           source={require('./assets/icons/seedling-solid.png')}
           />
         <View style={styles.content}>
-          <Text style={styles.subHeader}>
-            Welcome home,
-          </Text>
-          <Text style={styles.header}>
-            Plantista
-          </Text>
+          {
+            this.state.fontLoaded ? (
+              <Text style={styles.subHeader}>
+                Welcome home,
+              </Text>
+            ) : null
+          }
+          {
+            this.state.fontLoaded ? (
+              <Text style={styles.header}>
+                Plantista
+              </Text>
+            ) : null
+          }
         </View>
-        <Text style={styles.body}>
-          Your plants are waiting for you!
-        </Text>
+        {
+          this.state.fontLoaded ? (
+            <Text style={styles.body}>
+              Your plants are waiting for you!
+            </Text>
+          ) : null
+        }
         <TouchableOpacity onPress={() => Alert.alert('You pressed the button!')} style={styles.button}>
-          <Text style={styles.buttonText}>Get started</Text>
+          {
+            this.state.fontLoaded ? (
+              <Text style={styles.buttonText}>Get started</Text>
+            ) : null
+          }
         </TouchableOpacity>
       </View>
     );
@@ -94,5 +110,3 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   }
 });
-
-// { this.state.fontLoaded ? () : null }

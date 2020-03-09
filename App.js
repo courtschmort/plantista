@@ -1,112 +1,27 @@
-import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View, Alert } from 'react-native';
-
+import React, { useState } from 'react';
+import OnboardingTutorialScreen from './screens/OnboardingTutorialScreen';
 import * as Font from 'expo-font';
+import { AppLoading } from 'expo';
 
-export default class App extends React.Component {
-  state = {
-    fontLoaded: false,
-  };
-  async componentDidMount() {
-    await Font.loadAsync({
-      'poppins-medium': require('./assets/fonts/Poppins-Medium.ttf'),
-      'poppins-regular': require('./assets/fonts/Poppins-Regular.ttf'),
-      'poppins-semibold': require('./assets/fonts/Poppins-SemiBold.ttf'),
-      'playfair-display-regular': require('./assets/fonts/PlayfairDisplay-Regular.ttf')
-    });
-    this.setState({ fontLoaded: true });
-  }
-  render() {
+const getFonts = () => Font.loadAsync({
+  'poppins-medium': require('./assets/fonts/Poppins-Medium.ttf'),
+  'poppins-regular': require('./assets/fonts/Poppins-Regular.ttf'),
+  'poppins-semibold': require('./assets/fonts/Poppins-SemiBold.ttf'),
+  'playfairdisplay-regular': require('./assets/fonts/PlayfairDisplay-Regular.ttf'),
+});
+
+export default function App() {
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+  if (fontsLoaded) {
     return (
-      <View style={styles.container}>
-        <Image
-          style={styles.image}
-          source={require('./assets/icons/seedling-solid.png')}
-          />
-        <View style={styles.content}>
-          {
-            this.state.fontLoaded ? (
-              <Text style={styles.subHeader}>
-                Welcome home,
-              </Text>
-            ) : null
-          }
-          {
-            this.state.fontLoaded ? (
-              <Text style={styles.header}>
-                Plantista
-              </Text>
-            ) : null
-          }
-        </View>
-        {
-          this.state.fontLoaded ? (
-            <Text style={styles.body}>
-              Your plants are waiting for you!
-            </Text>
-          ) : null
-        }
-        <TouchableOpacity onPress={() => Alert.alert('You pressed the button!')} style={styles.button}>
-          {
-            this.state.fontLoaded ? (
-              <Text style={styles.buttonText}>Get started</Text>
-            ) : null
-          }
-        </TouchableOpacity>
-      </View>
+      <OnboardingTutorialScreen />
+    );
+  } else {
+    return (
+      <AppLoading
+        startAsync={getFonts}
+        onFinish={() => setFontsLoaded(true)}
+        />
     );
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-  },
-  content: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  header: {
-    fontFamily: 'playfair-display-regular',
-    fontSize: 64,
-  },
-  subHeader: {
-    fontFamily: 'poppins-regular',
-    fontSize: 16,
-    letterSpacing: 1.6,
-    textTransform: 'uppercase',
-    color: '#c4c4c4',
-  },
-  body: {
-    marginTop: 20,
-    fontFamily: 'poppins-regular',
-    fontSize: 16,
-  },
-  button: {
-    flex: 0,
-    justifyContent: 'flex-end',
-    marginTop: 32,
-    marginBottom: 32,
-    backgroundColor: 'black',
-    width: 350,
-  },
-  buttonText: {
-    padding: 20,
-    fontFamily: 'poppins-medium',
-    fontSize: 16,
-    textAlign: 'center',
-    color: 'white',
-  },
-  image: {
-    flex: 0,
-    justifyContent: 'flex-end',
-    marginTop: 64,
-    width: 44,
-    height: 44,
-    resizeMode: 'contain',
-  }
-});
+};

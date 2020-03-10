@@ -1,7 +1,15 @@
+// Hooks - useState
 import React, { useState } from 'react';
+
+// Custom Fonts
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
-import MainStackNavigator from './src/navigation/MainStackNavigator';
+
+// React Navigation
+import { NavigationContainer } from '@react-navigation/native';
+
+// Nested Stack Navigator & Bottom Tab Navigator
+import MainStackNavigator from './src/navigation/AppNavigator';
 
 const getFonts = () => Font.loadAsync({
   'poppins-regular': require('./assets/fonts/Poppins-Regular.ttf'),
@@ -10,10 +18,14 @@ const getFonts = () => Font.loadAsync({
 });
 
 export default function App() {
+
   const [fontsLoaded, setFontsLoaded] = useState(false);
+
   if (fontsLoaded) {
     return (
-      <MainStackNavigator />
+      <NavigationContainer>
+        <MainStackNavigator />
+      </NavigationContainer>
     );
   } else {
     return (
@@ -23,4 +35,5 @@ export default function App() {
         />
     );
   }
+
 };

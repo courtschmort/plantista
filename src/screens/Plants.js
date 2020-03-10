@@ -1,13 +1,16 @@
+// Hooks - useState
 import React, { useState } from 'react';
 import { StyleSheet, View, Image, Text, FlatList, TouchableOpacity } from 'react-native';
 
-export default function Home({ navigation }) {
+export default function Plants({ navigation }) {
+
   const [plants, setPlants] = useState([
     {name: 'Snakey', location: 'Bedroom', date: 'March 13, 2020', type: 'Snake Plant', notes: 'Snake plants prefer bright, indirect light and can even tolerate some direct sunlight.', image: 'TBD'}
-  ])
+  ]);
+
   return (
     <View style={styles.container}>
-      <Text style={{textAlign: 'center', fontFamily: 'playfairdisplay-regular', fontSize: 36, paddingBottom: 16}}>Your home</Text>
+      <Text style={{textAlign: 'center', fontFamily: 'playfairdisplay-regular', fontSize: 36, paddingBottom: 16}}>Your plants</Text>
       <Image
         style={styles.image}
         source={require('../../assets/images/mong-bui-NznxEfw9iVI-unsplash.jpg')}
@@ -23,6 +26,7 @@ export default function Home({ navigation }) {
       />
     </View>
   );
+
 };
 
 const styles = StyleSheet.create({

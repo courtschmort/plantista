@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 
 export default function Onboarding({ navigation }) {
@@ -16,7 +16,7 @@ export default function Onboarding({ navigation }) {
           Plantista
         </Text>
       </View>
-      <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.button}>
+      <TouchableOpacity onPress={() => navigation.navigate('Plants')} style={styles.button}>
         <Text style={styles.buttonText}>
           Get started
         </Text>

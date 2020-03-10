@@ -1,14 +1,15 @@
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View, Alert } from 'react-native';
 
-export default function OnboardingTutorialScreen() {
+export default function Onboarding({ navigation }) {
   const handlePress = () => {
-    Alert.alert('You pressed the button!')
+    // navigation.navigate('Home');
+    navigation.push('Home');
   };
   return (
     <View style={styles.container}>
       <Image
-        style={styles.image}
+        style={styles.icon}
         source={require('../assets/icons/seedling-solid.png')}
         />
       <View style={styles.headerContainer}>
@@ -55,7 +56,6 @@ const styles = StyleSheet.create({
     color: '#c4c4c4',
   },
   text: {
-    marginTop: 20,
     fontFamily: 'poppins-regular',
     fontSize: 16,
   },
@@ -74,10 +74,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'white',
   },
-  image: {
+  icon: {
     flex: 0,
     justifyContent: 'flex-end',
-    marginTop: 64,
+    marginTop: 32,
     width: 44,
     height: 44,
     resizeMode: 'contain',

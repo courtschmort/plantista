@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import OnboardingTutorialScreen from './screens/OnboardingTutorialScreen';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
+import Navigator from './routes/HomeStack';
 
 const getFonts = () => Font.loadAsync({
   'poppins-medium': require('./assets/fonts/Poppins-Medium.ttf'),
@@ -14,7 +14,7 @@ export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
   if (fontsLoaded) {
     return (
-      <OnboardingTutorialScreen />
+      <Navigator />
     );
   } else {
     return (

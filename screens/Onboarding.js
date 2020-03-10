@@ -1,11 +1,7 @@
 import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View, Alert } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function Onboarding({ navigation }) {
-  const handlePress = () => {
-    // navigation.navigate('Home');
-    navigation.push('Home');
-  };
   return (
     <View style={styles.container}>
       <Image
@@ -20,10 +16,7 @@ export default function Onboarding({ navigation }) {
           Plantista
         </Text>
       </View>
-      <Text style={styles.text}>
-        Your plants are waiting for you!
-      </Text>
-      <TouchableOpacity onPress={handlePress} style={styles.button}>
+      <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.button}>
         <Text style={styles.buttonText}>
           Get started
         </Text>
@@ -34,52 +27,48 @@ export default function Onboarding({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#fff',
+    padding: 32,
+    flex: 1,
     alignItems: 'center',
   },
   headerContainer: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
   header: {
+    paddingBottom: 24,
     fontFamily: 'playfairdisplay-regular',
     fontSize: 64,
+    lineHeight: 96,
   },
   subHeader: {
+    color: '#c4c4c4',
     fontFamily: 'poppins-regular',
     fontSize: 16,
     letterSpacing: 1.6,
+    lineHeight: 24,
     textTransform: 'uppercase',
-    color: '#c4c4c4',
-  },
-  text: {
-    fontFamily: 'poppins-regular',
-    fontSize: 16,
   },
   button: {
+    backgroundColor: '#000',
     flex: 0,
     justifyContent: 'flex-end',
-    marginTop: 32,
-    marginBottom: 32,
-    backgroundColor: 'black',
-    width: 350,
+    alignSelf: 'stretch',
   },
   buttonText: {
     padding: 20,
-    fontFamily: 'poppins-medium',
+    color: '#fff',
+    fontFamily: 'poppins-regular',
     fontSize: 16,
+    lineHeight: 24,
     textAlign: 'center',
-    color: 'white',
   },
   icon: {
-    flex: 0,
-    justifyContent: 'flex-end',
-    marginTop: 32,
-    width: 44,
-    height: 44,
+    marginBottom: 32,
+    width: 32,
+    height: 32,
     resizeMode: 'contain',
   }
 });

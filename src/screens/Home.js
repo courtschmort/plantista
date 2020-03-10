@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View, FlatList } from 'react-native';
+import { StyleSheet, View, Image, Text, FlatList, TouchableOpacity } from 'react-native';
 
 export default function Home({ navigation }) {
   const [plants, setPlants] = useState([
@@ -10,7 +10,7 @@ export default function Home({ navigation }) {
       <Text style={{textAlign: 'center', fontFamily: 'playfairdisplay-regular', fontSize: 36, paddingBottom: 16}}>Your home</Text>
       <Image
         style={styles.image}
-        source={require('../assets/images/mong-bui-NznxEfw9iVI-unsplash.jpg')}
+        source={require('../../assets/images/mong-bui-NznxEfw9iVI-unsplash.jpg')}
         />
       <FlatList
         data={plants}

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 
 export default function Onboarding({ navigation }) {
   return (
     <View style={styles.container}>
       <Image
         style={styles.icon}
-        source={require('../assets/icons/seedling-solid.png')}
+        source={require('../../assets/icons/seedling-solid.png')}
         />
       <View style={styles.headerContainer}>
         <Text style={styles.subHeader}>

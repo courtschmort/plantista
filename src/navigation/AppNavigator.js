@@ -77,7 +77,7 @@ function MainBottomTabNavigator() {
         component={Account}
         options={{
           tabBarIcon: ({ color }) => (
-            <FontAwesome name='user' color={color} size={32} />
+            <FontAwesome name='cog' color={color} size={32} />
           )
         }}
       />

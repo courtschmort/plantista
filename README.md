@@ -56,6 +56,9 @@ Plantista is a React Native mobile application.
 * In progress:
   * Landing Page
 
+###### Wednesday, March 11, 2020
+* Email sent to SightWorks
+
 ## Setup/Installation Requirements
 
 #### Cloning

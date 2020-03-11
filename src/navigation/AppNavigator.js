@@ -45,15 +45,21 @@ function MainBottomTabNavigator() {
   return (
     <Tab.Navigator
       tabBarOptions={{
-        activeTintColor: '#000'
+        showLabel: false,
+        activeTintColor: '#fff',
+        inactiveTintColor: '#eba58d',
+        style: {
+          backgroundColor: '#e27d5b',
+          height: 64
+        }
       }}
     >
       <Tab.Screen
         name='Plants'
         component={Plants}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome name='home' color={color} size={size} />
+          tabBarIcon: ({ color }) => (
+            <FontAwesome name='home' color={color} size={32} />
           )
         }}
       />
@@ -61,8 +67,8 @@ function MainBottomTabNavigator() {
         name='Add Plant'
         component={AddPlant}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome name='plus-circle' color={color} size={size} />
+          tabBarIcon: ({ color }) => (
+            <FontAwesome name='plus-circle' color={color} size={32} />
           )
         }}
       />
@@ -70,8 +76,8 @@ function MainBottomTabNavigator() {
         name='Account'
         component={Account}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome name='user' color={color} size={size} />
+          tabBarIcon: ({ color }) => (
+            <FontAwesome name='user' color={color} size={32} />
           )
         }}
       />

@@ -60,6 +60,7 @@ Plantista is a React Native mobile application.
 * Email sent to SightWorks
 * Email sent to iVET360
 * Email sent to Goalden Hour
+* Email sent to Tuft & Needle
 
 ## Setup/Installation Requirements
 

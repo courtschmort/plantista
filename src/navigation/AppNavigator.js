@@ -1,5 +1,8 @@
 import * as React from 'react';
 
+// Vector Icons
+import { FontAwesome } from '@expo/vector-icons';
+
 // React Navigation - Stack Navigator
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -40,10 +43,38 @@ export default function MainStackNavigator() {
 
 function MainBottomTabNavigator() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name='Plants' component={Plants} />
-      <Tab.Screen name='AddPlant' component={AddPlant} />
-      <Tab.Screen name='Account' component={Account} />
+    <Tab.Navigator
+      tabBarOptions={{
+        activeTintColor: '#000'
+      }}
+    >
+      <Tab.Screen
+        name='Plants'
+        component={Plants}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name='home' color={color} size={size} />
+          )
+        }}
+      />
+      <Tab.Screen
+        name='Add Plant'
+        component={AddPlant}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name='plus-circle' color={color} size={size} />
+          )
+        }}
+      />
+      <Tab.Screen
+        name='Account'
+        component={Account}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name='user' color={color} size={size} />
+          )
+        }}
+      />
     </Tab.Navigator>
   );
 };

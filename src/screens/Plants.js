@@ -1,6 +1,6 @@
 // Hooks - useState
 import React, { useState } from 'react';
-import { StyleSheet, View, Image, Text, FlatList, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Image, Text, FlatList, TouchableOpacity, StatusBar } from 'react-native';
 
 export default function Plants({ navigation }) {
 
@@ -10,6 +10,7 @@ export default function Plants({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <Text style={{textAlign: 'center', fontFamily: 'playfairdisplay-regular', fontSize: 36, paddingBottom: 16}}>Your plants</Text>
       <Image
         style={styles.image}

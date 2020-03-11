@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Image, Text, TouchableOpacity, StatusBar } from 'react-native';
 
 export default function Onboarding({ navigation }) {
   return (
     <View style={styles.container}>
+      <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <Image
         style={styles.icon}
         source={require('../../assets/icons/seedling-solid.png')}

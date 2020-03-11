@@ -1,6 +1,6 @@
 # Plantista
 
-#### Capstone for [Epicodus](https://www.epicodus.com/); March 13, 2020
+#### Capstone for [Epicodus](https://www.epicodus.com/); March 12, 2020
 
 <!-- Updated Month DD, YYYY -->
 

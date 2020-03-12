@@ -7,7 +7,7 @@ export default function Onboarding({ navigation }) {
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <Image
         style={styles.icon}
-        source={require('../../assets/icons/seedling-solid.png')}
+        source={require('../../assets/icons/seedling-solid-fern_green.png')}
         />
       <View style={styles.headerContainer}>
         <Text style={styles.subHeader}>
@@ -29,7 +29,7 @@ export default function Onboarding({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
-    padding: 32,
+    paddingTop: 20,
     flex: 1,
     alignItems: 'center',
   },
@@ -39,35 +39,30 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   header: {
-    paddingBottom: 24,
     fontFamily: 'playfairdisplay-regular',
     fontSize: 64,
-    lineHeight: 96,
   },
   subHeader: {
     color: '#c4c4c4',
     fontFamily: 'poppins-regular',
     fontSize: 16,
     letterSpacing: 1.6,
-    lineHeight: 24,
     textTransform: 'uppercase',
   },
   button: {
-    backgroundColor: '#000',
-    flex: 0,
-    justifyContent: 'flex-end',
+    height: 64,
+    backgroundColor: '#cb4e24',
+    justifyContent: 'center',
     alignSelf: 'stretch',
   },
   buttonText: {
-    padding: 20,
     color: '#fff',
     fontFamily: 'poppins-regular',
     fontSize: 16,
-    lineHeight: 24,
     textAlign: 'center',
   },
   icon: {
-    marginBottom: 32,
+    marginTop: 32,
     width: 32,
     height: 32,
     resizeMode: 'contain',

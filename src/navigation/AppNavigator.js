@@ -33,9 +33,10 @@ export default function MainStackNavigator() {
       <Stack.Screen
         name='Plants'
         component={MainBottomTabNavigator}
-        options={{
+        options={({ route }) => ({
+          headerTitle: getHeaderTitle(route),
           headerShown: false,
-        }}
+        })}
       />
     </Stack.Navigator>
   );
@@ -84,3 +85,18 @@ function MainBottomTabNavigator() {
     </Tab.Navigator>
   );
 };
+
+function getHeaderTitle(route) {
+  const routeName = route.state
+    ? route.state.routes[route.state.index].name
+    : route.params?.screen || 'Plants'
+
+  switch (routeName) {
+    case 'Plants':
+      return 'Plants'
+    case 'Add Plant':
+      return 'Add Plants'
+    case 'Account':
+      return 'Account'
+  }
+}

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, View, Text, StatusBar } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, StatusBar } from 'react-native';
 
 export default function Account() {
   return (
@@ -7,6 +7,24 @@ export default function Account() {
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <Text style={styles.smallLink}>Sign Out</Text>
       <Text style={styles.header}>Your account</Text>
+      <View>
+        <Text style={styles.subHeader}>Name</Text>
+        <Text>First Last</Text>
+        <Text style={styles.subHeader}>Email</Text>
+        <Text>example@email.com</Text>
+        <Text style={styles.subHeader}>Password</Text>
+        <Text>*******</Text>
+      </View>
+      <TouchableOpacity onPress={() => navigation.navigate('Plants')} style={styles.button}>
+        <Text style={styles.buttonText}>
+          Get started
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Plants')} style={styles.button}>
+        <Text style={styles.buttonText}>
+          Get started
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -30,6 +48,25 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     fontFamily: 'playfairdisplay-regular',
     fontSize: 36,
+    textAlign: 'center',
+  },
+  subHeader: {
+    color: '#c4c4c4',
+    fontFamily: 'poppins-regular',
+    fontSize: 16,
+    letterSpacing: 1.6,
+    textTransform: 'uppercase',
+  },
+  button: {
+    height: 64,
+    backgroundColor: '#cb4e24',
+    justifyContent: 'center',
+    alignSelf: 'stretch',
+  },
+  buttonText: {
+    color: '#fff',
+    fontFamily: 'poppins-regular',
+    fontSize: 16,
     textAlign: 'center',
   }
 });

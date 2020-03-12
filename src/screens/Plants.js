@@ -55,12 +55,12 @@ const styles = StyleSheet.create({
   },
   smallLink: {
     marginTop: 12,
+    marginBottom: 12,
     fontFamily: 'poppins-semibold',
     fontSize: 12,
     textAlign: 'right',
   },
   header: {
-    marginTop: 12,
     marginBottom: 16,
     fontFamily: 'playfairdisplay-regular',
     fontSize: 36,

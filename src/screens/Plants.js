@@ -37,7 +37,7 @@ export default function Plants({ navigation }) {
         <Text style={styles.header}>Your plants</Text>
         <Text style={{marginTop: 16, fontSize: 16, textAlign: 'center'}}>
           <Text style={{fontFamily: 'poppins-regular'}}>It feels a bit empty in here. </Text>
-          <Text style={{fontFamily: 'poppins-semibold'}}>{'\n'}Add a plant </Text>
+          <Text onPress={() => navigation.navigate('Add Plant')} style={{fontFamily: 'poppins-semibold'}}>{'\n'}Add a plant </Text>
           <Text style={{fontFamily: 'poppins-regular'}}>to your home.</Text>
         </Text>
       </View>

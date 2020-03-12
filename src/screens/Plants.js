@@ -5,7 +5,7 @@ import { StyleSheet, View, Image, Text, FlatList, TouchableOpacity, StatusBar } 
 export default function Plants({ navigation }) {
 
   const [plants, setPlants] = useState([
-    {name: 'Snakey', location: 'Bedroom', date: 'March 13, 2020', type: 'Snake Plant', notes: 'Snake plants prefer bright, indirect light and can even tolerate some direct sunlight.', image: 'TBD'}
+
   ]);
 
   if (plants != '') {
@@ -35,7 +35,11 @@ export default function Plants({ navigation }) {
         <StatusBar barStyle="dark-content" backgroundColor="#fff" />
         <Text style={styles.smallLink}>Sign Out</Text>
         <Text style={styles.header}>Your plants</Text>
-        <Text style={{fontFamily: 'poppins-regular', fontSize: 16, textAlign: 'center'}}>It feels a bit empty in here. Add a plant to your home.</Text>
+        <Text style={{marginTop: 16, fontSize: 16, textAlign: 'center'}}>
+          <Text style={{fontFamily: 'poppins-regular'}}>It feels a bit empty in here. </Text>
+          <Text style={{fontFamily: 'poppins-semibold'}}>{'\n'}Add a plant </Text>
+          <Text style={{fontFamily: 'poppins-regular'}}>to your home.</Text>
+        </Text>
       </View>
     );
   }

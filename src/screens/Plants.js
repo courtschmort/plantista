@@ -8,27 +8,37 @@ export default function Plants({ navigation }) {
     {name: 'Snakey', location: 'Bedroom', date: 'March 13, 2020', type: 'Snake Plant', notes: 'Snake plants prefer bright, indirect light and can even tolerate some direct sunlight.', image: 'TBD'}
   ]);
 
-  return (
-    <View style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-      <Text style={styles.smallLink}>Sign Out</Text>
-      <Text style={styles.header}>Your plants</Text>
-      <Image
-        style={styles.image}
-        source={require('../../assets/images/mong-bui-NznxEfw9iVI-unsplash.jpg')}
-        />
-      <FlatList
-        data={plants}
-        renderItem={({ item }) => (
-          <TouchableOpacity>
-            <Text style={styles.name}>{ item.name }</Text>
-            <Text style={styles.type}>{ item.type }</Text>
-          </TouchableOpacity>
-        )}
-      />
-    </View>
-  );
-
+  if (plants != '') {
+    return (
+      <View style={styles.container}>
+        <StatusBar barStyle="dark-content" backgroundColor="#fff" />
+        <Text style={styles.smallLink}>Sign Out</Text>
+        <Text style={styles.header}>Your plants</Text>
+        <Image
+          style={styles.image}
+          source={require('../../assets/images/mong-bui-NznxEfw9iVI-unsplash.jpg')}
+          />
+        <FlatList
+          data={plants}
+          renderItem={({ item }) => (
+            <TouchableOpacity>
+              <Text style={styles.name}>{ item.name }</Text>
+              <Text style={styles.type}>{ item.type }</Text>
+            </TouchableOpacity>
+          )}
+          />
+      </View>
+    );
+  } else {
+    return (
+      <View style={styles.container}>
+        <StatusBar barStyle="dark-content" backgroundColor="#fff" />
+        <Text style={styles.smallLink}>Sign Out</Text>
+        <Text style={styles.header}>Your plants</Text>
+        <Text style={{fontFamily: 'poppins-regular', fontSize: 16, textAlign: 'center'}}>It feels a bit empty in here. Add a plant to your home.</Text>
+      </View>
+    );
+  }
 };
 
 const styles = StyleSheet.create({

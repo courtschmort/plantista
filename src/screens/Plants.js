@@ -11,7 +11,8 @@ export default function Plants({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-      <Text style={{textAlign: 'center', fontFamily: 'playfairdisplay-regular', fontSize: 36, paddingBottom: 16}}>Your plants</Text>
+      <Text style={styles.smallLink}>Sign Out</Text>
+      <Text style={styles.header}>Your plants</Text>
       <Image
         style={styles.image}
         source={require('../../assets/images/mong-bui-NznxEfw9iVI-unsplash.jpg')}
@@ -32,9 +33,24 @@ export default function Plants({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 32,
     backgroundColor: '#fff',
+    paddingTop: 20,
+    paddingLeft: 32,
+    paddingRight: 32,
+    flex: 1,
+  },
+  smallLink: {
+    marginTop: 12,
+    fontFamily: 'poppins-semibold',
+    fontSize: 12,
+    textAlign: 'right',
+  },
+  header: {
+    marginTop: 12,
+    marginBottom: 16,
+    fontFamily: 'playfairdisplay-regular',
+    fontSize: 36,
+    textAlign: 'center',
   },
   image: {
     width: 350,

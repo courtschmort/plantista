@@ -47,11 +47,11 @@ function MainBottomTabNavigator() {
       tabBarOptions={{
         showLabel: false,
         activeTintColor: '#fff',
-        inactiveTintColor: '#eba58d',
+        inactiveTintColor: '#eeb29e',
         style: {
           backgroundColor: '#e27d5b',
-          height: 64
-        }
+          height: 64,
+        },
       }}
     >
       <Tab.Screen
